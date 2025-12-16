@@ -1,0 +1,44 @@
+body {
+    background-color: #0a0a0a; /* Dark background for better visibility */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Hide scroll bars */
+}
+
+.board {
+    width: 80%;
+    height: 80%;
+    background-color: #1a1a1a;
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: sans-serif;
+    position: relative; /* Needed for the trail elements to position correctly within */
+    overflow: hidden;
+}
+
+.trail {
+    position: absolute; /* Position relative to the board */
+    width: 10px;
+    height: 10px;
+    background: #00f; /* Blue color for the trail */
+    border-radius: 50%;
+    pointer-events: none; /* Allows clicks to go through the trail elements to elements beneath */
+    /* Animation for fading out and scaling down over 2 seconds */
+    animation: fadeOut 2s forwards;
+    transform-origin: center;
+    z-index: 10;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(0.1);
+    }
+}
